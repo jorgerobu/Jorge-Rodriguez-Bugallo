@@ -1,0 +1,40 @@
+// Módulo de variables scss
+
+$color-fondo: violet;
+$color-fondo-h2: rgba(238,130,238,0.348);
+$color-texto-primario: #333;
+$color-enlaces:#901490;
+$color-popover: #02bdda;
+$radio-borde: 5 ;
+$fuente-primaria: Cambria, Cochin, Georgia, Times,serif;
+$fuente-secundaria: "Gill Sans", "Gil Sans MT", Calibri, sans-serif;
+$fuente-terciaria:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+$fuente-size: 14;  // no se pone la medida se hace un calculo al usarla
+$tam-h1: 2.5;
+$redes: "facebook", "github", "gmail", "instagram";
+$url:"../../assets/img";
+$fondo: "fondo.png";
+$prepro: "less", "sass", "stylus";
+
+$font-weghts: (  //mapa es como un array asoiativo
+    "regular": 400,
+    "medium": 500,
+    "bold": 700
+);
+
+$prefixes: ( //mapa es como un array asoiativo
+    "firefox": moz,
+    "safari": webkit,
+    "ie": ms,
+    "opera": o,
+
+);
+
+$icons: ( //mapa es como un array asoiativo
+    "copy": "\00A9",
+    "eye": "\e8f4",
+    "start": "\e885",
+    "stop": "\e888",
+    "bookmark": "\e886"
+)
+

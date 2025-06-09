@@ -1,0 +1,32 @@
+/*=============================================
+=            Estilos para los subtitulos            =
+=============================================*/
+::cue{
+    font: 1.2rem "Josefin Sans", sans-serif;
+    background-color:rgba(0, 0, 0, 0.568);
+}
+
+::cue(.titulo){
+    background-color:aqua;
+    font: 1.5rem "Alata", sans-serif;
+
+}
+
+::cue(.escena1, .escena2){
+    color: rgb(66, 231, 66);
+}
+
+::cue(.escena3){
+    color:rgb(236, 84, 236);
+}
+
+::cue(.escena4, .escena7){
+    color: rgb(255, 251, 29);
+}
+
+::cue(.escena5, .escena6){
+    background-color: rgba(240, 248, 255, 0.733);
+    color: blue;
+}
+/*=====  End of Estilos para los subtitulos  ======*/
+

@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import "./media.css";
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primario--blanco: hsl(0, 0%, 100%);
+    --color-primario--negro: hsl(0, 0%, 0%);
+    --color-primario--gris-oscuro: hsl(0, 0%, 55%);
+    --color-primario--gris-muy-oscuro: hsl(0, 0%, 41%);
+    --color-menu-hover: #522d70;
+    --font-size: 15px;
+    --font-family: "Alata", sans-serif;
+    --transition: all .5s ease-in-out;
+    font:var(--font-size)/1.6 var(--font-family)
+}
+
+
+/*=============================================
+=            Estilos generales            =
+=============================================*/
+
+body{
+    max-width: 100vw;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+img{
+    width: 100%;
+    object-fit: cover;
+}
+video{
+    max-width: 100%
+}
+
+.logo {
+    width: 100px;
+}
+
+ul li {
+    list-style: none;
+}
+ul li a{
+    text-decoration: none;
+    color: var(--color-primario--blanco);
+}
+
+header,
+main,
+footer {
+    padding: 2rem;
+}
+
+h1{
+    font-size: 2rem;
+    border: 2px solid var(--color-primario--blanco);
+    color: var(--color-primario--blanco);
+    width: 100%;
+    padding: 1rem;
+}
+
+h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+p {
+    color: var(--color-primario--gris-muy-oscuro);
+}
+
+.btn {
+    border: 1px solid var(--color-primario--negro);
+    background-color: var(--color-primario--blanco);
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.btn:hover{
+    color: var(--color-primario--blanco);
+    background-color: var(--color-primario--negro);
+}
+
+/*=====  End of Estilos generales  ======*/
+
+
+/*=============================================
+=            Estilos del header            =
+=============================================*/
+header {
+    width: 100%;
+    background-image: url(../images/mobile/image-hero.jpg);
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+header h1{
+    max-width: 450px;
+    text-transform: uppercase;
+}
+
+.nav_mobile{
+    z-index: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    background-color: var(--color-primario--negro);
+    color: var(--color-primario--blanco);
+    position: fixed;
+    inset: 0; 
+    transform: translatex(-200vw);
+    transition: var(--transition);
+}
+
+.nav_mobile div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu{
+    flex: 1;
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.menu li a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    width: max-content;
+}
+.menu li a::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: var(--color-primario--blanco);
+    border-radius: 1.5px;
+    transition: var(--transition);
+}
+
+.menu li:hover a::after{
+    width: 100%;
+}
+.close {
+    font-size: 1.5rem;
+    color: var(--color-primario--blanco);
+}
+
+.hamburger {
+    width: 30px;
+    position: absolute;
+    right: 32px;
+    top:32px
+}
+
+.nav_desktop {
+    position: absolute;
+    top: -100vw;
+}
+
+
+.mostrar{
+    transform: translateX(0);
+}
+
+/*=====  End of Estilos del header  ======*/
+
+
+
+/*=============================================
+=            Estilos del main            =
+=============================================*/
+main,
+.interactive_vr,
+.creaciones,
+.eventos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    max-width: 1292px;
+}
+
+.interactive_vr{
+    align-items: center;
+    position: relative;
+    width: 80%;
+}
+
+.interactive_vr figure{
+    width: 90%;
+}
+
+.interactive_vr section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding:0 2rem;
+    background-color: var(--color-primario--blanco);   
+}
+
+.creaciones {
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 1rem;
+}
+
+.creaciones .btn{
+    order: 1;
+}
+.creaciones h2{
+    text-align: center;
+}
+
+.creaciones ul{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(auto,256px));
+    gap: 1rem;
+    justify-content: center;
+}
+.creaciones li {
+    list-style: none;
+    color: var(--color-primario--blanco);
+    width: 100%;
+    height: 100px;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.creaciones li:hover{
+    transform: scale(1.02);
+    box-shadow: 3px 3px 10px 3px var(--color-primario--negro);
+}
+
+h3 {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.creaciones li:nth-of-type(1){
+    background-image: url("../images/desktop/image-deep-earth.jpg");
+}
+.creaciones li:nth-of-type(2){
+    background-image: url("../images/desktop/image-night-arcade.jpg");
+}
+
+.creaciones li:nth-of-type(3){
+    background-image: url("../images/desktop/image-soccer-team.jpg");
+}
+
+.creaciones li:nth-of-type(4){
+    background-image: url("../images/desktop/image-grid.jpg");
+}
+
+.creaciones li:nth-of-type(5){
+    background-image: url("../images/desktop/image-from-above.jpg");
+}
+
+.creaciones li:nth-of-type(6){
+    background-image: url("../images/desktop/image-pocket-borealis.jpg");
+}
+
+.creaciones li:nth-of-type(7){
+    background-image: url("../images/desktop/image-curiosity.jpg");
+}
+
+.creaciones li:nth-of-type(8){
+    background-image: url("../images/desktop/image-fisheye.jpg");
+}
+
+video {
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px 3px var(--color-primario--gris-oscuro);
+}
+
+/*=====  End of Estilos del main  ======*/
+
+
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer {
+    width: 100%;
+    background-color: var(--color-primario--negro);
+    color: var(--color-primario--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+footer .logo{
+    width: 100px;
+}
+
+.nav_secundario{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav_secundario a{
+    transition: var(--transition);
+}
+.nav_secundario a:hover{
+    color: var(--color-menu-hover);
+    font-weight: bold;
+}
+
+.redes{
+    display: flex;
+    gap: 1rem;
+    order: 1;
+}
+.redes img{
+    transition: var(--transition);
+}
+
+.redes a:hover img{
+    transform: rotate(360deg);
+}
+
+.redes li{
+    list-style: none;
+}
+
+.redes li a{
+    text-decoration: none;
+}
+
+footer p {
+    order: 2;
+}
+
+/*=====  End of Estilos del footer  ======*/
+
+@media screen and (min-width: 720px) {
+
+    .hamburger {
+        display: none;
+    }
+
+    .nav_desktop {
+        flex: 1;
+        position: static;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu{
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .nav_secundario {
+        flex-direction: row;
+        gap:  1rem;
+    }
+    
+
+    .logo {
+        width: 300px;
+    }
+    .interactive_vr figure{
+        width: 60%;
+    }
+
+    .interactive_vr section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding:0 2rem;
+        background-color: var(--color-primario--blanco);
+        position: absolute;
+        bottom: 0;
+        left: 40%;
+        
+    }
+
+    .creaciones{
+        justify-content: center;
+        position: relative;
+    }
+    .creaciones ul{
+        grid-auto-rows: minmax(auto,400px);
+    }
+
+    .creaciones li{
+        height: 100%;
+    }
+
+    .creaciones .btn{
+        position: absolute;
+        right: 100px;
+        top: -5px;
+        order: 0;
+    }
+    
+    footer{
+        flex-direction: row;
+    }
+}

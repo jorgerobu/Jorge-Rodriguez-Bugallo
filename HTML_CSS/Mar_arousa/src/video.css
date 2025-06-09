@@ -1,0 +1,27 @@
+/*=============================================
+=            Estilos del video            =
+=============================================*/
+
+video {
+  max-width: 600px;
+  width: 100%;
+}
+
+::cue{
+  background: black;
+  font: 1.2rem;
+  font:1.2rem "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+::cue(.titulo){
+  text-shadow: 1px 1px 2px black;
+  font: var(--fuente-secundaria);
+  color: var(--color-secundario);
+  font-size: 1.5rem;
+}
+
+::cue(v[voice=narrador]){
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: blue;
+  background-color: white;
+}

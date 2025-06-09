@@ -1,0 +1,28 @@
+{
+  "movimientos": [
+    {
+      "id": "832f",
+      "concepto": "Nómina",
+      "cantidad": "1600",
+      "estado": "true"
+    },
+    {
+      "id": "5ab1",
+      "concepto": "Luz",
+      "cantidad": "-70",
+      "estado": "true"
+    },
+    {
+      "id": "afe3",
+      "concepto": "Internet",
+      "cantidad": "-65",
+      "estado": "true"
+    },
+    {
+      "id": "1edf",
+      "concepto": "Bizum",
+      "cantidad": "200",
+      "estado": true
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+/*=============================================
+=            Estilos de las animaciones            =
+=============================================*/
+
+@keyframes rotar {
+    0%{
+        transform: rotatey(0deg);
+    }
+
+    25%{
+        transform: rotatey(60deg);
+
+    }
+
+    75%{
+        transform: rotateY(-60deg);
+    }
+
+    100%{
+        transform: rotatey(0deg);
+    }
+    
+}

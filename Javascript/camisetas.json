@@ -1,0 +1,162 @@
+{
+  "tshirts": [
+    {
+      "customizable": true,
+      "footballKit": "2",
+      "sexGroup": "Unisex",
+      "date": "2025-05-06",
+      "price": "70.9",
+      "image": "./assets/images/CVU002.webp",
+      "teamId": "1",
+      "sizes": {
+        "U": "2",
+        "S": "1",
+        "M": "1",
+        "L": "1",
+        "XL": "1",
+        "2XL": "1"
+      },
+      "id": "2"
+    },
+    {
+      "id": "4",
+      "teamId": "0",
+      "footballKit": "2",
+      "sexGroup": "Mujer",
+      "date": "2024-02-12",
+      "price": "70.9",
+      "customizable": false,
+      "sizes": {
+        "U": "3",
+        "S": "0",
+        "M": "0",
+        "L": "0",
+        "XL": "0",
+        "2XL": "0"
+      },
+      "image": "./assets/images/RMM002.webp"
+    },
+    {
+      "id": "6",
+      "teamId": "2",
+      "footballKit": "1",
+      "sexGroup": "Mujer",
+      "date": "2024-02-12",
+      "price": "90.95",
+      "customizable": true,
+      "sizes": {
+        "U": "0",
+        "S": "3",
+        "M": "3",
+        "L": "0",
+        "XL": "0",
+        "2XL": "0"
+      },
+      "image": "./assets/images/FBM001.webp"
+    },
+    {
+      "id": "7",
+      "teamId": "2",
+      "footballKit": "1",
+      "sexGroup": "Hombre",
+      "date": "2024-02-12",
+      "price": "96.9",
+      "customizable": true,
+      "sizes": {
+        "U": "0",
+        "S": "0",
+        "M": "3",
+        "L": "4",
+        "XL": "3",
+        "2XL": "0"
+      },
+      "image": "./assets/images/FBH001.webp"
+    },
+    {
+      "id": "05f9",
+      "customizable": false,
+      "footballKit": "2",
+      "sexGroup": "Hombre",
+      "date": "2024-02-12",
+      "price": "70.9",
+      "image": "./assets/images/RMH003.webp",
+      "teamId": "0",
+      "sizes": {
+        "U": "3",
+        "S": "1",
+        "M": "0",
+        "L": "0",
+        "XL": "0",
+        "2XL": "0"
+      }
+    },
+    {
+      "id": "8c73",
+      "customizable": true,
+      "footballKit": "3",
+      "sexGroup": "Hombre",
+      "date": "2024-02-12",
+      "price": "70.9",
+      "image": "./assets/images/RMH003.webp",
+      "teamId": "0",
+      "sizes": {
+        "U": "3",
+        "S": "1",
+        "M": "1",
+        "L": "1",
+        "XL": "1",
+        "2XL": "1"
+      }
+    },
+    {
+      "id": "7055",
+      "customizable": true,
+      "footballKit": "3",
+      "sexGroup": "Hombre",
+      "date": "2024-02-12",
+      "price": "70.9",
+      "image": "./assets/images/RMH003.webp",
+      "teamId": "0",
+      "sizes": {
+        "U": "3",
+        "S": "0",
+        "M": "0",
+        "L": "0",
+        "XL": "0",
+        "2XL": "0"
+      }
+    },
+    {
+      "id": "6b53",
+      "customizable": true,
+      "footballKit": "1",
+      "sexGroup": "Mujer",
+      "date": "2024-02-12",
+      "price": "80.9",
+      "image": "./assets/images/RMM001.webp",
+      "teamId": "0",
+      "sizes": {
+        "U": "0",
+        "S": "2",
+        "M": "2",
+        "L": "1",
+        "XL": "0",
+        "2XL": "0"
+      }
+    }
+  ],
+  "teams": [
+    {
+      "id": "0",
+      "name": "Real Madrid"
+    },
+    {
+      "id": "1",
+      "name": "Celta De Vigo"
+    },
+    {
+      "id": "2",
+      "name": "Barça"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de productos</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <script src="src/js/my_script.js" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <section id="productos">
+        <h2>Postres</h2>
+        <ul class="cards">
+          <!-- Lista de template-postre-item -->
+        </ul>
+      </section>
+
+      <!-- cesta con dulces -->
+      <section class="carrito">
+        <!-- Lista de postres en carrito: template-cesta-postres -->
+      </section>
+
+      <!-- 
+           Si la cesta está vacía, en vez de la sección anterior se mostrará  
+           la siguiente: (añadimos la clase carrito--vacio a la sección y modificamos su interior)
+      -->
+      <!-- 
+      <section class="carrito carrito--vacio"> 
+          template-cesta-vacio
+      </section>-->
+    </main>
+
+    <dialog id="confirmar">
+      <figure>
+        <img src="./assets/images/icon-order-confirmed.svg" alt="" />
+      </figure>
+      <h2>Orden de confirmación</h2>
+      <ul class="carrito__productos">
+        <!-- Lista de template-dialog-cesta-item -->
+        <!--
+        <li class="producto">
+          <figure>
+            <img src="./assets/images/image-tiramisu-thumbnail.jpg" alt="" />
+          </figure>
+          <div role="region">
+            <p class="producto__nombre">
+              Tiramisu Clásico
+              <button class="btn--delete">X</button>
+            </p>
+            <p class="producto__info">
+              <span class="cantidad">1x</span>
+              <span class="precio">5,50</span>
+              <span class="precio precio--total">5,5</span>
+            </p>
+          </div>
+        </li> 
+        -->
+        <p class="carrito__total">
+          Compra total<span class="precio"
+            ><!--  Precio total de los postres en la cesta --></span
+          >
+        </p>
+      </ul>
+      <button class="btn confirmar__btn" onclick="window.confirmar.close();">
+        Nuevo pedido
+      </button>
+    </dialog>
+
+    <template id="template-postre-item">
+      <li class="card">
+        <figure class="card__img">
+          <!-- Imagen desktop del postre, por ejemplo -->
+          <img src="./assets/images/image-waffle-desktop.jpg" alt="" />
+        </figure>
+
+        <!-- Si no hay este postre en la cesta se muestra -->
+        <p class="card__add">Añadir al carro</p>
+
+        <!-- Si hay este postre en la cesta se muestra -->
+        <p class="card__add card__add--count">
+          <button class="card__btn">-</button>
+          <span class="num"
+            ><!-- cantidad de postres de este tipo en carrito --></span
+          >
+          <button class="card__btn">+</button>
+        </p>
+
+        <section class="card__content">
+          <p class="categoria"><!-- category --></p>
+          <h4 class="card__titulo"><!-- title --></h4>
+          <p class="precio"><!-- price --></p>
+        </section>
+      </li>
+    </template>
+
+    <template id="template-cesta-postres">
+      <h3>
+        Su cesta
+        <span class="carrito__unidades">(<!-- Número total de postres en carrito -->)</span>
+      </h3>
+      <a href="" class="carrito__delete">
+        <img src="./assets/images/icon-delete-to-cart.svg" alt="" />
+      </a>
+      <ul class="carrito__productos">
+        <!-- Lista de postres en el carrito: template-cesta-postre-item -->
+      </ul>
+      <p class="carrito__total">
+        Compra total<span class="precio"><!-- Precio Total del carrito--></span>
+      </p>
+      <button class="btn carrito__btn" onclick="window.confirmar.showModal();">
+        Confirmar compra
+      </button>
+    </template>
+
+    <template id="template-cesta-postre-item">
+      <li class="producto">
+        <p class="producto__nombre">
+          <!-- postre.title -->
+          <button class="btn--delete">X</button>
+        </p>
+        <p class="producto__info">
+          <span class="cantidad"
+            ><!-- cantidad de postres de este tipo -->x</span
+          >
+          <span class="precio"><!-- postre.price --></span>
+          <span class="precio precio--total"><!-- precio total --></span>
+        </p>
+      </li>
+    </template>
+
+    <template id="template-cesta-vacio">
+      <h3>Su cesta <span class="carrito__total"></span></h3>
+      <p class="aviso">Sus articulos añadidos aparecerán aquí</p>
+    </template>
+
+    <template id="#template-dialog-cesta-item">
+      <li class="producto">
+        <figure>
+          <!-- Imagen thumbnail del postre, por ejemplo -->
+          <img src="./assets/images/image-tiramisu-thumbnail.jpg" alt="" />
+        </figure>
+        <div role="region">
+          <p class="producto__nombre">
+            <!-- Nombre del postre -->
+            <button class="btn--delete">X</button>
+          </p>
+          <p class="producto__info">
+            <span class="cantidad">
+              <!-- numero de postres en carrito -->
+              x</span
+            >
+            <span class="precio"><!--  price  --></span>
+            <span class="precio precio--total"
+              ><!--  precio total: numero de postres * price  --></span
+            >
+          </p>
+        </div>
+      </li>
+    </template>
+  </body>
+</html>

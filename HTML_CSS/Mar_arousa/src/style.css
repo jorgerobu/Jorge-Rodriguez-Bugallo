@@ -1,0 +1,399 @@
+@charset "UTF-8";
+@import url(./fonts.css);
+@import url(./animaciones.css);
+@import url(./modal.css);
+@import url(./video.css);
+/*=============================================
+=            Estilos generales            =
+=============================================*/
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-secundario: #644E26;
+  --color-secundario-claro: #f4bc63ac;
+  --color-secundario-oscuro: #7F632E;
+  --color-primario: rgb(50, 50, 63);
+  --color-fondo: rgba(10, 9, 24, 0.365);
+  --color-fondo-2: rgba(10, 9, 24, 0.895);
+  --color-fondo-claro: #edf2f8;
+  --transition: all 0.6s ease-in-out;
+  --size-h1: 2.5rem;
+  --fuente-secundaria: 'Merriweather', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  --fuente-primaria: 'Times New Roman', Times, serif;
+  font: 14px/1.6 var(--fuente-primaria);
+}
+
+html {
+  background-color: var(--color-primario);
+}
+
+body {
+  max-width: 2560px;
+  color: var(--color-primario);
+  background-color: #fafafa;
+  margin: 0 auto;
+}
+
+.icono {
+  max-width: 30px;
+  transition: var(--transition);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fuente-secundaria);
+}
+
+h1 {
+  font-size: var(--size-h1);
+  color: white;
+  letter-spacing: 4px;
+}
+
+h2 {
+  font-size: calc(var(--size-h1) - 0.25rem);
+}
+
+h2 {
+  font-size: calc(var(--size-h1) - 0.5rem);
+}
+
+
+footer .separador {
+  border: 1px dashed var(--color-secundario);
+  width: 100%;
+}
+
+a:not(:is(nav a)){
+  color: var(--color-secundario);
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+img{
+  width: 100%;
+  object-fit: cover;
+}
+
+/*=====  End of Estilos generales  ======*/
+
+
+
+/*=============================================
+=            Estilos de la cabecera           =
+=============================================*/
+header {
+  max-width: 2560px;
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-fondo);
+  position: fixed;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.logo {
+  max-width: 100px;
+  display: block;
+  }
+
+nav a{
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  color: var(--color-fondo-claro);
+}
+
+.menu li a{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 2px;
+  width: max-content;
+}
+.menu li a::after{
+  content: ""; 
+  width: 0; 
+  height: 4px;
+  background-color: var(--color-fondo-claro);
+  border-radius: 1.5px;
+  transition: var(--transition);
+}
+
+.menu li:hover a::after{
+  width: 100%; 
+}
+/*=====  End of Estilos de la cabecera  ======*/
+
+
+
+/*=============================================
+=            Estilos del main                 =
+=============================================*/
+main {
+  width: 100%;
+  padding-bottom: 4rem;
+}
+
+#nosotros h3 {
+  color: var(--color-secundario-oscuro);
+}
+
+
+main h2:not(h1+h2) {
+  color: var(--color-primario);
+}
+
+
+#nosotros,
+#visitantes{
+  padding: 1rem;
+  max-width: 1400px;
+}
+
+/*=============================================
+=            Estilos de la portada            =
+=============================================*/
+
+
+
+#portada {
+  height: 939px;
+  background: linear-gradient(rgba(11, 10, 31, 0.712), rgba(11, 10, 31, 0.726)), url(../assets/img/puertodeportivo-vilanova.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+#portada p{
+  max-width: 90%;
+}
+
+/*=====  End of Estilos de la portada  ======*/
+
+
+/*=============================================
+=            Estilos nosotros - servicios     =
+=============================================*/
+#nosotros {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  text-align: left;
+  gap: .5rem;
+}
+
+
+/*=============================================
+=            Estilos de las cards            =
+=============================================*/
+#servicios{
+  text-align: center;
+  background: url(../assets/img/puertodeportivo-vilanova-home.jpg);
+  background-size: cover;
+}
+
+.cards{
+  max-width: 1400px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0 auto;
+  perspective: 600px;
+  perspective-origin: center;
+}
+
+.card{
+  max-width: 370px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: white;
+  animation: rotar .8s linear;
+}
+
+.card:hover{
+  border: 3px solid var(--color-secundario);
+}
+
+.card figure {
+  text-align: center;
+}
+
+.card img{
+  max-width: 55%;
+}
+
+.card button {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  text-transform: uppercase;
+  border:2px solid var(--color-secundario);
+  transition: var(--transition);
+}
+
+.card button:hover{
+  background-color: var(--color-secundario);
+  color: white;
+}
+
+
+/*=============================================
+=            Estilos de visitantes            =
+=============================================*/
+#visitantes{
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+#visitantes ul li{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 200px;
+}
+
+#visitantes span:first-of-type{
+  font-size: 2rem;
+}
+
+#visitantes figure{
+  max-width: 2rem;
+}
+
+#visitantes span{
+  text-transform: uppercase;
+}
+
+#visitantes .sub-info{
+  color: var(--color-secundario);
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+/*=====  End of Estilos del main  ======*/
+
+
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer {
+  padding: 1rem;
+  color: white;
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  align-items: center;
+  gap: 1rem;
+}
+footer article {
+  align-items: start;
+}
+
+footer article p:first-child{
+  order: 1;
+}
+
+footer {
+  background-color: var(--color-fondo-2);
+}
+
+footer ul{
+  display: flex;
+  gap: 2rem;
+  transform: rotateX(0deg);
+}
+
+footer img{
+  transition: var(--transition);
+}
+
+footer ul li img:hover{
+  transform: rotate(360deg);
+}
+
+/*=====  End of Estilos del footer  ======*/
+
+
+/*=============================================
+=            Media Queries            =
+=============================================*/
+@media screen and (min-width:720px) {
+  :root{
+    --size-h1: 4rem;
+    font-size: 16px;
+  }
+
+  #portada p{
+  max-width: 70%;
+  }
+
+  header{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #servicios .cards{
+    flex-direction: row;
+  }
+
+  #visitantes ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #visitantes figure{
+  display: none;
+  }
+
+  footer{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  footer .separador{
+    display: none;
+  }
+
+}
+
+/*=====  End of Media Queries  ======*/

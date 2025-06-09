@@ -1,0 +1,26 @@
+WEBVTT
+
+Titulo
+00:00:00.000 --> 00:03:07.000 line:5%
+<c.titulo>Arosa Mar</c.titulo>
+
+1
+00:00:00.000 --> 00:00:08.000 line:85%
+<v narrador>Situado en el marco incomparable de la ensenada 
+agrante de la Isla de Arousa.</v>
+
+2
+00:00:08.100 --> 00:00:11.100 line:85% align:center
+<v narrador>Entre punta Sinas y el puente que la une al continente.</v>
+
+Titulo desde el segundo 0 al final del vídeo, aparece a 5% de eje Y
+Arosa Mar
+
+1 - Desde el segundo 0 al segundo 8. 85% del eje Y, centrado
+Voz, narrador
+Situado en el marco incomparable de la ensenada 
+agrante de la Isla de Arousa.
+
+2 - Desde el segundo 8 y 100 ms hasta 11 y 100 ms. 85% del eje Y, centrado
+Voz, narrador
+Entre punta Sinas y el puente que la une al continente

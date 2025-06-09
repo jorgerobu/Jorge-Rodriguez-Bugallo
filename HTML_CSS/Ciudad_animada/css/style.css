@@ -1,0 +1,241 @@
+*, *::after, *::before{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+:root {
+	--clr-fondo: #1e272e;
+	--clr-sengundo: #93c3e9;
+	--clr-esfera1: #ffd957;
+	--clr-esfera2: #57ffa0;
+	--clr-esfera3: #ff8b57;
+}
+
+/*=============================================
+=            Estilos generales            =
+=============================================*/
+
+body{
+	display: flex;
+	justify-content: center;
+	background-color: var(--clr-fondo);
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+}
+
+img{
+	width: 100%;
+	object-fit: cover;
+}
+
+.cloud,
+.air,
+.plane,
+.car {
+	position: absolute;
+}
+/*=====  End of Estilos generales  ======*/
+
+
+/*=============================================
+=            Estilos de los loadings            =
+=============================================*/
+.loading{
+	position: absolute;
+	inset: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	
+}
+
+.loading span {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	animation: loading 2s ease-in-out 3 forwards;
+	opacity: 0;
+}
+
+.loading span:nth-of-type(1){
+	background-color: var(--clr-esfera1);
+}
+
+.loading span:nth-of-type(2){
+	background-color: var(--clr-esfera2);
+	animation-delay: .3s;
+}
+
+.loading span:nth-of-type(3){
+	background-color: var(--clr-esfera3);
+	animation-delay: .6s;
+}
+
+/*=====  End of Estilos de los loadings  ======*/
+
+
+
+/*=============================================
+=            Estilos de la ciudad            =
+=============================================*/
+.contenedor {
+	width: 100%;
+	max-height: 700px;
+	height: 100%;
+	background: var(--clr-sengundo) url(../images/city-bg.png); 
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	opacity: 0;
+	animation: aparecer 5s ease-in-out 2s 1 forwards;
+	position: relative;
+	z-index: -1;
+}
+
+
+/*=====  End of Estilos de la ciudad  ======*/
+
+
+
+/*=============================================
+=            Estilos de las objetos            =
+=============================================*/
+.cloud {
+	width: 80%;
+	top:10%;
+	left: 0%;
+	animation: mover_nubes 100s linear 2s infinite;
+}
+
+.plane1 {
+	width: 0%;
+	top: 20%;
+	left: -5%;
+	z-index: 10;
+	opacity: 0;
+	animation: vuelo_avion_1 35s linear 2s infinite;
+}
+.plane2 {
+	width: 2%;
+	top: 60%;
+	left: 50%;
+	opacity: 0.2;
+	transform: rotate(-50deg);
+	animation: vuelo_avion_2 35s linear 2s infinite;
+}
+
+.car {
+	width: 10%;
+	bottom: 0;
+	left: -5%;
+	--desplazamiento: 100%;
+	animation: coche 8s linear infinite;
+}
+
+.car1{
+	z-index: 1;
+}
+.car2{
+	bottom: 3%;
+	left: -10%;
+	animation-duration: 7s;
+	animation-delay: 16s;
+}
+
+.car4{
+	left: 100%;
+	transform: rotatey(180deg);
+	bottom: 5%;
+	--desplazamiento: -120%;
+	animation-delay: 12s;
+	animation-duration: 5s;
+}
+
+.car3{
+	left: 110%;
+	transform: rotatey(180deg);
+	bottom: 5%;
+	--desplazamiento: -120%;
+	animation-delay: 13s;
+	animation-duration: 6s;
+}
+
+.air1{
+	width: 2%;
+	left: 70%;
+	top: 65%;
+	opacity: 0;
+	animation: vuelo_globo_1 60s linear 2s infinite;
+}
+
+/*=====  End of Estilos de los objetos  ======*/
+
+
+
+/*=============================================
+=            Estilos de las animaciones       =
+=============================================*/
+
+@keyframes loading {
+	0%{
+		opacity: 1;
+	}
+	50%{
+		transform: scale(0.7) translateY(10px); 
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+@keyframes aparecer {
+	100%{
+		opacity: 1;
+	}
+}
+
+@keyframes mover_nubes {
+	100%{
+		left: 100%;
+	}
+}
+
+@keyframes vuelo_avion_1{
+	100% {
+		width: 10%;
+		opacity: 1;
+		left: 105%;
+	}
+}
+
+@keyframes vuelo_avion_2{
+	100% {
+		width: 8%;
+		opacity: 0.8;
+		top: -10%;
+		left: 20%;
+	}
+}
+
+@keyframes vuelo_globo_1{
+	100% {
+		width: 6%;
+		left: 45%;
+		opacity: 1;
+		top: -15%;
+	}
+} 
+
+@keyframes coche {
+	100%{
+		left: var(--desplazamiento);
+	}
+	
+}
+
+/*=====  End of Estilos de las animaciones  ======*/
+

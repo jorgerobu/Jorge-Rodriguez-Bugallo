@@ -1,0 +1,506 @@
+@charset "UTF-8";
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font: 14px/1.6 "RedHatText", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+@media screen and (min-width: 720px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+nav ul {
+  text-decoration: none;
+}
+nav ul a {
+  list-style: none;
+}
+
+body {
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  background-color: hsl(20, 50%, 98%);
+  display: flex;
+  flex-direction: column;
+}
+body img {
+  width: 100%;
+  object-fit: cover;
+}
+body h2 {
+  color: hsl(14, 65%, 9%);
+}
+body h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+body h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+body h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+body h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+body h4.card__titulo {
+  font-size: 1.3rem;
+}
+body * p {
+  padding: 0.25rem 0;
+}
+body main {
+  flex: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+}
+@media screen and (min-width: 720px) {
+  body main {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 400px);
+    grid-auto-flow: row dense;
+    grid-auto-rows: 1fr;
+    justify-content: center;
+  }
+}
+body main h3 {
+  color: hsl(16, 84%, 40%);
+}
+body main h4.card__titulo {
+  color: hsl(14, 65%, 9%);
+}
+body main #productos {
+  width: 100%;
+  padding: 1rem 0;
+  grid-column: 1/2;
+}
+body main .precio::after {
+  content: "€";
+}
+body main .ocultar {
+  opacity: 0;
+  z-index: -1;
+}
+body .btn {
+  min-width: 250px;
+  border-radius: 40px;
+  background-color: hsl(16, 84%, 40%);
+  color: white;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: none;
+  font-size: 1.2rem;
+  -moz-transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  box-shadow: 0px 6px 0px hsl(17, 86%, 16%);
+}
+body .btn:hover {
+  opacity: 0.95;
+}
+body .btn:active {
+  -moz-transform: translateY(6px);
+  -webkit-transform: translateY(6px);
+  -ms-transform: translateY(6px);
+  -o-transform: translateY(6px);
+  transform: translateY(6px);
+  box-shadow: 0px 0px 0px hsl(17, 86%, 16%);
+}
+
+@font-face {
+  font-family: "RedHatText";
+  src: url("../../assets/fonts/RedHatText/static/RedHatText-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "RedHatText";
+  src: url("../../assets/fonts/RedHatText/static/RedHatText-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "RedHatText";
+  src: url("../../assets/fonts/RedHatText/static/RedHatText-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+/*=============================================
+=            Estilos de las cards            =
+=============================================*/
+.cards {
+  list-style: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-flow: row dense;
+  grid-auto-rows: 1fr;
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+}
+.cards .card {
+  width: 100%;
+  height: 100%;
+  max-height: 450px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.cards .card__img {
+  max-width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+}
+.cards .card__img img {
+  border-radius: 10px;
+  border: 3px solid transparent;
+}
+.cards .card:hover .card__img img, .cards .card:focus .card__img img {
+  border-color: hsl(16, 84%, 40%);
+}
+.cards .card__btn {
+  border-radius: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  color: white;
+  border: 1px solid;
+  font-size: 1.5rem;
+  background-color: hsl(16, 84%, 40%);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.cards .card__btn:hover {
+  color: hsl(12, 20%, 44%);
+  background-color: white;
+}
+.cards .card__add {
+  width: max-content;
+  min-width: 180px;
+  border-radius: 50px;
+  border: 1px solid hsl(16, 84%, 40%);
+  color: hsl(14, 65%, 9%);
+  font-weight: 700;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 0.25rem;
+  padding: 1rem;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, 60%);
+  -webkit-transform: translate(-50%, 60%);
+  -ms-transform: translate(-50%, 60%);
+  -o-transform: translate(-50%, 60%);
+  transform: translate(-50%, 60%);
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+.cards .card__add--cesta:first-of-type:before {
+  content: "";
+  background: url(../../assets/images/icon-add-to-cart.svg) no-repeat;
+  background-size: cover;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.cards .card__add--count {
+  background-color: hsl(16, 84%, 40%);
+  color: white;
+}
+.cards .card__content {
+  width: 100%;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-flow: column wrap;
+}
+.cards .card__content .categoria {
+  color: hsl(7, 20%, 60%);
+}
+.cards .card__content .precio {
+  color: hsl(16, 84%, 40%);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/*=============================================
+=            Estilos del carrito            =
+=============================================*/
+.carrito {
+  width: 99%;
+  min-height: 300px;
+  margin: 0 auto;
+  padding: 2rem;
+  height: max-content;
+  background-color: white;
+  border-radius: 5px;
+  grid-column: 2/3;
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  /*=============================================
+  =            Estilos de los productos            =
+  =============================================*/
+}
+.carrito figure {
+  width: 150px;
+  margin: 0 auto;
+}
+.carrito p.aviso {
+  color: hsl(12, 20%, 44%);
+}
+.carrito--vacio {
+  background: white url(../../assets/images/illustration-empty-cart.svg) no-repeat center;
+  background-size: 200px;
+}
+.carrito__delete {
+  width: 60px;
+  max-height: 40px;
+  position: absolute;
+  right: 15px;
+}
+.carrito__delete:hover img {
+  transform: scale(1.2);
+}
+.carrito__productos {
+  list-style: none;
+}
+.carrito__productos .producto {
+  display: flex;
+  flex-flow: column wrap;
+  border-bottom: 2px solid hsl(13, 31%, 94%);
+}
+.carrito__productos .producto__nombre {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.carrito__productos .producto__info {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  grid-auto-flow: row dense;
+  grid-auto-rows: 1fr;
+  gap: 2rem;
+}
+.carrito__productos .producto__info .cantidad {
+  color: hsl(16, 84%, 40%);
+  font-weight: 600;
+}
+.carrito__productos .producto__info .precio {
+  color: hsl(12, 20%, 44%);
+}
+.carrito__productos .producto__info .precio--total {
+  justify-self: end;
+}
+dialog .carrito__productos .producto {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-auto-flow: row dense;
+  grid-auto-rows: 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+dialog .carrito__productos {
+  background-color: hsl(20, 50%, 98%);
+  padding: 1rem;
+  border-radius: 5px;
+}
+.carrito__productos .btn--delete {
+  background-color: white;
+  border-radius: 50%;
+  width: 1.1rem;
+  height: 1.1rem;
+  color: hsl(12, 20%, 44%);
+  border: 1px solid;
+}
+.carrito__productos .btn--delete:hover {
+  color: hsl(14, 65%, 9%);
+  box-shadow: 1px 1px 5px;
+}
+.carrito__total {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  color: hsl(12, 20%, 44%);
+}
+.carrito__total .precio {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: hsl(14, 65%, 9%);
+}
+
+@-moz-keyframes aparecer {
+  from {
+    top: -50vw;
+  }
+}
+@-webkit-keyframes aparecer {
+  from {
+    top: -50vw;
+  }
+}
+@-ms-keyframes aparecer {
+  from {
+    top: -50vw;
+  }
+}
+@-o-keyframes aparecer {
+  from {
+    top: -50vw;
+  }
+}
+@keyframes aparecer {
+  from {
+    top: -50vw;
+  }
+}
+@-moz-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-ms-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+@-webkit-keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+@-ms-keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+@-o-keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+@keyframes move-up {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 42px;
+  }
+}
+/*=============================================
+=            Estilos de la ventana de diálogo            =
+=============================================*/
+dialog {
+  max-width: 650px;
+  padding: 3% 2%;
+  margin: 0 auto;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background-color: white;
+  position: absolute;
+  top: 25%;
+  text-align: center;
+  -moz-animation: aparecer 0.5s ease-in-out, fade-in 0.75s ease-in-out forwards;
+  -webkit-animation: aparecer 0.5s ease-in-out, fade-in 0.75s ease-in-out forwards;
+  -ms-animation: aparecer 0.5s ease-in-out, fade-in 0.75s ease-in-out forwards;
+  -o-animation: aparecer 0.5s ease-in-out, fade-in 0.75s ease-in-out forwards;
+  animation: aparecer 0.5s ease-in-out, fade-in 0.75s ease-in-out forwards;
+}
+dialog figure {
+  max-width: 40px;
+}
+dialog svg {
+  max-width: 30px;
+  width: 100%;
+  height: auto;
+}
+dialog::backdrop {
+  background-color: hsla(16, 54%, 24%, 0.37);
+}
+dialog h2 {
+  padding-bottom: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */

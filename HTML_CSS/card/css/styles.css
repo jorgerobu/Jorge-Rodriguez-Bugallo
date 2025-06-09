@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primario-verde:hsl(75, 94%, 57%);
+    --color-neutro-blanco: hsl(0, 0%, 100%);
+    --color-neutro-gris: hsl(0, 0%, 20%);
+    --color-neutro-gris-oscuro: hsl(0, 0%, 12%);
+    --color-neutro-negro-apagado: hsl(0, 0%, 8%);
+    --font-size: 14px;
+    --font-family: "Inter", sans-serif;
+    font: var(--font-size)/1.6 var(--font-family);
+}
+
+/*=============================================
+=            Estilos generales            =
+=============================================*/
+body{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--color-neutro-negro-apagado);
+    color: var(--color-neutro-blanco);
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    position: relative;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+
+    color: var(--color-primario-verde);
+    font-weight: bold;
+}
+
+.card,
+.card header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*=====  End of Estilos generales  ======*/
+
+
+/*=============================================
+=            Estilos de la card            =
+=============================================*/
+.card{
+    width: 100%;
+    height: max-content;
+    background-color: var(--color-neutro-gris-oscuro);
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 3px 3px 10px 2px black;
+}
+
+header {
+    width: 90%;
+    padding-bottom: 1rem;
+}
+
+figure{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.botones {
+    width: 90%;
+}
+
+.boton {
+    background-color: var(--color-neutro-gris);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    list-style: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.boton:hover {
+    background-color: var(--color-primario-verde);
+    color: var(--color-neutro-negro-apagado);
+}
+
+.boton a{
+    text-decoration: none;
+    color: var(--color-neutro-blanco);
+    font-size: 1.2rem;
+}
+
+
+
+/*=====  End of Estilos de la card  ======*/
+
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    text-align: center;
+}
+
+
+/*=====  End of Estilos del footer  ======*/

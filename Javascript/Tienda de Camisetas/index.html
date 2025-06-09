@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión Camisetas</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <!-- <script src="./src/scripts/my_script.js" type="module" defer></script> -->
+    <script src="./src/scripts/my_script.js" type="module" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <section id="formulario">
+        <h2>Gestión de camisetas</h2>
+        <div role="form" class="form">
+          <figure class="form__img">
+            <img src="./assets/images/producto-sin-imagen.png" alt="" />
+          </figure>
+          <form action="#" autocomplete="off">
+            <div class="campo">
+              <label for="equipo">Equipo</label>
+              <div class="combobox-wrapper">
+                <div id="ex1-combobox">
+                  <input
+                    type="text"
+                    role="combobox"
+                    aria-haspopup="grid"
+                    aria-expanded="false"
+                    aria-autocomplete="list"
+                    aria-controls="ex1-grid"
+                    id="equipo"
+                    placeholder="Equipos de Futbol"
+                  />
+                </div>
+                <div
+                  aria-labelledby="ex1-label"
+                  role="grid"
+                  class="list hidden"
+                  id="equipos"
+                >
+                  <!-- Lista de equipos ya existentes: se genera automaticamente con GridCombobox -->
+                  <!-- 
+                       Solo hay que hacer que la funcion searchEquipos(cad) que devuelva un array con 
+                       los nombres de los equipos cuyo nombre contiene "cad" (unicamente los nombres)
+                  -->
+                </div>
+              </div>
+            </div>
+            <p class="campo">
+              <label for="eq">Equipación</label>
+              <select name="eq" id="eq">
+                <option value="1">1ª</option>
+                <option value="2">2ª</option>
+                <option value="3">3ª</option>
+              </select>
+            </p>
+            <p class="campo">
+              <label for="sexo">Sexo</label>
+              <select name="sexo" id="sexo">
+                <option value="Unisex">Unisex</option>
+                <option value="Bebe">Bebe</option>
+                <option value="Hombre">Hombre</option>
+                <option value="Mujer">Mujer</option>
+                <option value="Niño/a">Niño/a</option>
+              </select>
+            </p>
+            <p class="campo">
+              <label for="fecha">Fecha de entrada</label>
+              <input type="date" name="fecha" id="fecha" />
+            </p>
+            <p class="campo">
+              <label for="precio">Precio</label>
+              <input
+                type="number"
+                name="precio"
+                id="precio"
+                min="0"
+                step="0.01"
+                required
+              />
+            </p>
+            <p class="campo">
+              <span>Personalizable: </span>
+              <label for="si">Si</label>
+              <input type="radio" name="personalizable" id="si" />
+              <label for="no">No</label>
+              <input type="radio" name="personalizable" id="no" checked />
+            </p>
+            <ul class="campo" id="cantidad">
+              <li>
+                <label for="U">Unica</label>
+                <input type="number" min="0" value="0" name="U" id="U" />
+              </li>
+              <li>
+                <label for="S">S</label>
+                <input type="number" min="0" value="0" name="S" id="S" />
+              </li>
+              <li>
+                <label for="M">M</label>
+                <input type="number" min="0" value="0" name="M" id="M" />
+              </li>
+              <li>
+                <label for="L">L</label>
+                <input type="number" min="0" value="0" name="L" id="L" />
+              </li>
+              <li>
+                <label for="XL">XL</label>
+                <input type="number" min="0" value="0" name="XL" id="XL" />
+              </li>
+              <li>
+                <label for="2XL">2XL</label>
+                <input type="number" min="0" value="0" name="2XL" id="2XL" />
+              </li>
+            </ul>
+            <p class="campo" id="imagen">
+              <label for="imagen">Imagen</label>
+              <input
+                type="text"
+                name="imagen"
+                id="imagen"
+                placeholder="imagen.webp"
+              />
+            </p>
+            <p class="campo botones">
+              <button type="submit" id="enviar" class="btn">Añadir</button>
+              <button type="reset" id="cancelar" class="btn btn--delete">Cancelar</button>
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <section id="lista">
+        <section class="filtro">
+          <h2>Filtro</h2>
+          <section>
+            <h3>Tallas</h3>
+            <ul class="filtro__tallas">
+              <li>U</li>
+              <li>S</li>
+              <li>M</li>
+              <li>L</li>
+              <li>XL</li>
+              <li>2XL</li>
+            </ul>
+          </section>
+          <section class="filtro__equipos">
+            <h3>Equipos</h3>
+            <div class="combobox-wrapper">
+              <select id="filtro-equipo">
+                <!-- Listado de nombres de equipos existentes -->
+                <!-- 
+                   <option value="team.id">team.name</option> 
+                 -->
+              </select>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <h2>Listado de camisetas</h2>
+          <ul class="cards">
+            <!-- Listado de camisetas : template-camiseta-item -->
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <template id="template-camiseta-item">
+      <li class="card">
+        <figure class="card__img">
+          <!-- Imagen de la camiseta: image -->
+          <img src="./assets/images/RMH001.webp" alt="" />
+        </figure>
+        <h4 class="card__titulo">
+          <!-- footballKit -->
+          <!-- team name -->
+        </h4>
+        <p class="cart__categoria"><!-- sexGroup --></p>
+        <ul class="card__tallas">
+          <!-- Si no hay stock se añade la clase nostock al li correspondiente -->
+          <li class="nostock">S</li>
+          <li>M</li>
+          <li>L</li>
+          <li>XL</li>
+          <li>2XL</li>
+        </ul>
+        <p class="card__precio"><!-- price --></p>
+        <p class="btns">
+          <a href="" class="icon--edit"></a>
+          <a href="" class="icon--delete"></a>
+        </p>
+      </li>
+    </template>
+  </body>
+</html>

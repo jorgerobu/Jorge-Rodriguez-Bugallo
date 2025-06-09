@@ -1,0 +1,23 @@
+{
+    "movimientos": [
+        {
+        "id":1,
+        "concepto": "Nómina",
+        "cantidad": "1500",
+        "estado": true
+        },
+        {
+            "id":2,
+            "concepto": "Luz",
+            "cantidad": "-50",
+            "estado": true
+        },
+        {
+            "id":3,
+            "concepto": "Trasferencia",
+            "cantidad": "500",
+            "estado": false
+        }
+    ]
+}
+    

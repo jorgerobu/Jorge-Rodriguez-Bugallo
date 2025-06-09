@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/style.css">
+  <title>Arousa Mar - Club naútico</title>
+</head>
+<body>
+
+  <header>
+    <figure>
+      <a href="index.html" class="logo" aria-label="Enlace a la página principal"><img src="./assets/img/logos/logo_arousa_mar.png" alt="arousa mar"></a>
+    </figure>
+    <nav >
+      <ul class="menu">
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#reservas" onclick="window.reserva.showModal()">Reservas</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!--portada-->
+    <section id="portada">
+      <h1>Arousa Mar</h1>
+      <h2>Puerto Deportivo</h2>
+      <p>El considerable atractivo de las Rías Gallegas y sus características,
+      que las permiten navegables durante todos los días del año,
+      hacen que cada vez los navegantes demanden más puntos de atraque en ellas.
+      Así, en medio de la Ría de Arousa y de reciente construcción se encuentra
+      el Puerto Deportivo de Vilanova de Arousa.</p>
+    </section>
+  <main>
+    <section id="nosotros">
+      <h2>Arousa Mar</h2>
+      <h3>42º 33´ 97´´ N - 08º 49´ 99´´ W</h3>
+      <!--video-->
+      <video width="640" height="360" controls poster="./assets/img/mapa.jpg">
+        <source src="./assets/videos/Puerto_deportivo.mp4" type="video/mp4">
+        <track src="./assets/videos/subtitulos_es.vtt" kind="subtitles" srclang="es" label="Español" default>
+      </video>
+      <details>
+        <summary>Transcripción del video</summary>
+        <p>Arousa mar. Situado en el marco incomparable de la ensenada 
+          agrante de la Isla de Arousa. Entre punta Sinas y el puente que la une al continente</p>
+        </details>
+      </section>
+      
+      <!-- Servicios-->
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <ul class="cards">
+        <li class="card">
+          <figure>
+            <img src="./assets/img/steering.png" alt="Imagen de un timón">
+          </figure>
+          <h3>Para todos los marineros</h3>
+          <button>informacion</button>
+        </li>
+        <li class="card">
+          <figure>
+            <img src="./assets/img/rope.png" alt="Imagen de un nudo marinero">
+          </figure>
+          <h3>Para tu confort</h3>
+          <button>informacion</button>
+        </li>
+        <li class="card">
+          <figure>
+            <img src="./assets/img/mask.png" alt="Imagen de una máscara de buceo">
+          </figure>
+          <h3>Para estar al día</h3>
+          <button>informacion</button>
+        </li>
+      </ul>
+    </section>
+
+    <section id="visitantes">
+      <h2>Embarcaciones visitantes</h2>
+      <ul>
+        <li>
+          <span>568</span>
+          <span class="sub-info">yates</span>
+          <figure>
+            <img src="./assets/img/anchor.svg" alt="imagen de un ancla">
+          </figure>
+
+        </li>
+        <li>
+          <span>37</span>
+          <span class="sub-info">catamaranes</span>
+          <figure>
+            <img src="./assets/img/anchor.svg" alt="">
+          </figure>
+
+        </li>
+        <li>
+          <span>536</span>
+          <span class="sub-info">veleros</span>
+          <figure>
+            <img src="./assets/img/anchor.svg" alt="">
+          </figure>
+
+        </li>
+        <li>
+          <span>65</span>
+          <span class="sub-info">Motos de agua</span>
+
+        </li>
+      </ul>
+    </section>
+
+      <!--modal-->
+      <dialog id="reserva">
+        <section>
+          <h2>Reservas</h2>
+          <button class="btn__close" onclick="window.reserva.close()">X</button>
+          <form action="index.html" class="form">
+             <fieldset>
+              <legend>Datos del barco</legend>
+              <p>
+                <label for="barco">Nombre</label>
+                <input type="text" name="barco" id="barco" placeholder="Buena Suerte" title="Nombre de la embarcación" autofocus autocomplete="name" required>
+              </p>
+              <p>
+                <label for="eslora">Eslora (m)</label>
+                 <input type="number" name="eslora" id="eslora" min="2.5" max="16.0" step=".1" value="6.0" title="Longitud de la eslora en metros" required>
+              </p>
+              <p>
+                <label for="calado">Calado (m)</label>
+                <input type="number" name="calado" id="calado" min="0" max="3" step="1.2" value="1.2" title="Calado de la embarcacion en metros" required> 
+              </p>
+              <p>
+                <label for="manga">Manga (m)</label>
+                 <input type="number" name="manga" id="manga" min="1.5" max="6" step=".1" value="2.0" title="Longitud de la mana en metros" required>
+              </p>
+            </fieldset>
+            <fieldset>
+              <legend>Fechas de Reserva</legend>
+              <p>
+                <label for="f_llegada">Fecha de llegada</label>
+                <input type="date" name="f_llegada" id="f_llegada" min="2025-03-01" title="Fecha de amarre en puerto" required>
+              </p>
+              <p>
+                <label for="f_salida">Fecha de salida</label>
+                <input type="date" name="f_salida" id="f_salida" min="2025-03-14" title="Fecha de salida del puerto" required>
+              </p>
+            </fieldset>
+            <fieldset>
+              <legend>Datos de Contacto</legend>
+              <p>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" placeholder="María José" autocomplete="name">
+              </p>
+              <p>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" autocomplete="email" required>
+              </p>
+            </fieldset>
+            <p class="buttons">
+              <button type="submit" value="enviar" aria-label="Enviar formulario">Enviar</button>
+              <button type="reset">Limpiar</button>
+            </p>
+            
+            
+          </form>
+        </section>
+      </dialog>
+  </main>
+  <footer>
+    <article>
+      <p>Arousa Mar &#9784; Club Nautico</p>
+      <p>Puerto deportivo.</p>
+      <adress>Vilanova de Arousa &middot; Pontevedra &middot; 36620</adress>
+      <p>Telefono <a href="tel:+34986561420">(+34) 986 561 420</a></p>
+      <p>Email <a href="mailto:arousamar@arousamar.es">arousamar@arousamar.es</a></p>
+    </article>
+
+    <div role="separator" class="separador"></div>
+    <p>2025 &copy; Jorge Rodríguez Bugallo</p>
+    <div role="separator" class="separador"></div>
+
+    <!--redes-->
+    <ul>
+      <li><a href="www.x.com"><img src="./assets/img/logos/logo-X.svg" class="icono" alt="Enlace a X"></a></li>
+      <li><a href="www.facebook.com"><img src="./assets/img/logos/logo-facebook.svg" class="icono" alt="Enlace a Facebook"></a></li>
+      <li><a href="wwww.youtube.com"><img src="./assets/img/logos/logo-youtube.svg" class="icono" alt="Enlace a Youtube"></a></li>
+      <li><a href="www.instagram.com"><img src="./assets/img/logos/logo-instagram.svg" class="icono" alt="Enlace a Instagram"></a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

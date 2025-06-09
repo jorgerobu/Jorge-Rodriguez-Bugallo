@@ -1,0 +1,15 @@
+/*=============================================
+=            Estilos de las fuentes            =
+=============================================*/
+@font-face {
+    font-family: Merriweather;
+    src: url(../assets/fonts/Merriweather/Merriweather-Black.ttf);
+    src: url(../assets/fonts/Merriweather/Merriweather-BlackItalic.ttf);
+    src: url(../assets/fonts/Merriweather/Merriweather-Black.ttf);
+    src: url(../assets/fonts/Merriweather/Merriweather-Bold.ttf);
+    src: url(../assets/fonts/Merriweather/Merriweather-BoldItalic.ttf);
+    src: url(../assets/fonts/Merriweather/Merriweather-Italic.ttf);
+    src: url(../assets/fonts/Merriweather/Merriweather-Light.ttf);
+    src: url(../assets/fonts/Merriweather/Merriweather-LightItalic.ttf);
+    src: url(../assets/fonts/Merriweather/Merriweather-Regular.ttf);
+}

@@ -1,0 +1,106 @@
+{
+  "postres": [
+    {
+      "id": "0",
+      "image": {
+        "thumbnail": "./assets/images/image-waffle-thumbnail.jpg",
+        "desktop": "./assets/images/image-waffle-desktop.jpg"
+      },
+      "name": "Gofre con bayas",
+      "category": "Gofre",
+      "price": 6.5
+    },
+    {
+      "id": "1",
+      "image": {
+        "thumbnail": "./assets/images/image-creme-brulee-thumbnail.jpg",
+        "desktop": "./assets/images/image-creme-brulee-desktop.jpg"
+      },
+      "name": "Crème Brûlée de Vainilla",
+      "category": "Crème Brûlée",
+      "price": 7
+    },
+    {
+      "id": "2",
+      "image": {
+        "thumbnail": "./assets/images/image-macaron-thumbnail.jpg",
+        "desktop": "./assets/images/image-macaron-desktop.jpg"
+      },
+      "name": "Surtido de Macaron",
+      "category": "Macaron",
+      "price": 8
+    },
+    {
+      "id": "3",
+      "image": {
+        "thumbnail": "./assets/images/image-tiramisu-thumbnail.jpg",
+        "desktop": "./assets/images/image-tiramisu-desktop.jpg"
+      },
+      "name": "Tiramisú Clásico",
+      "category": "Tiramisu",
+      "price": 5.5
+    },
+    {
+      "id": "4",
+      "image": {
+        "thumbnail": "./assets/images/image-baklava-thumbnail.jpg",
+        "desktop": "./assets/images/image-baklava-desktop.jpg"
+      },
+      "name": "Baklava de pistacho",
+      "category": "Baklava",
+      "price": 4
+    },
+    {
+      "id": "5",
+      "image": {
+        "thumbnail": "./assets/images/image-meringue-thumbnail.jpg",
+        "desktop": "./assets/images/image-meringue-desktop.jpg"
+      },
+      "name": "Tarta de limón",
+      "category": "Tarta",
+      "price": 5
+    },
+    {
+      "id": "6",
+      "image": {
+        "thumbnail": "./assets/images/image-cake-thumbnail.jpg",
+        "desktop": "./assets/images/image-cake-desktop.jpg"
+      },
+      "name": "Red Velvet",
+      "category": "Bizcocho",
+      "price": 4.5
+    },
+    {
+      "id": "7",
+      "image": {
+        "thumbnail": "./assets/images/image-brownie-thumbnail.jpg",
+        "desktop": "./assets/images/image-brownie-desktop.jpg"
+      },
+      "name": "Brownie de caramelo salado",
+      "category": "Brownie",
+      "price": 4.5
+    },
+    {
+      "id": "8",
+      "image": {
+        "thumbnail": "./assets/images/image-panna-cotta-thumbnail.jpg",
+        "desktop": "./assets/images/image-panna-cotta-desktop.jpg"
+      },
+      "name": "Panna Cotta de Vainilla",
+      "category": "Panna Cotta",
+      "price": 6.5
+    }
+  ],
+  "cestas": [
+    {
+      "id": "f647",
+      "cantidad": 1,
+      "postreId": "0"
+    },
+    {
+      "id": "219b",
+      "cantidad": 2,
+      "postreId": "1"
+    }
+  ]
+}

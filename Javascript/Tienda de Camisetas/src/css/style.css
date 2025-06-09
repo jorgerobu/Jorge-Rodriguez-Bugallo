@@ -1,0 +1,603 @@
+@charset "UTF-8";
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font: 14px/1.6 "RedHatText", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #040d2d;
+}
+@media screen and (min-width: 720px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+img {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid #2eb4e7;
+}
+
+nav ul {
+  text-decoration: none;
+}
+nav ul a {
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.euro::after {
+  content: "€";
+}
+
+.combobox-wrapper input {
+  min-width: 230px;
+  font-size: inherit;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  line-height: 1.5em;
+  padding: 0.5rem;
+}
+.combobox-wrapper .list {
+  min-width: 230px;
+  background: #fafafa;
+  border: 1px solid #ccc;
+  list-style: none;
+  position: absolute;
+  top: auto;
+  z-index: 1;
+}
+.combobox-wrapper .list .result-row {
+  padding: 0.5rem;
+  cursor: default;
+  margin: 0;
+}
+.combobox-wrapper .list .result-row:hover {
+  background: rgb(139, 189, 225);
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+body img {
+  width: 100%;
+  object-fit: cover;
+}
+body main {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+}
+body main h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+body main h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+body main h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+body main h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+body main h4.card__titulo {
+  font-size: 1.3rem;
+}
+body main h2,
+body main h3,
+body main h4 {
+  text-align: center;
+  color: #040d2d;
+  margin-bottom: 1rem;
+}
+body main * p {
+  padding: 0.25rem 0;
+}
+body main > section {
+  min-height: 100%;
+}
+body main #lista {
+  width: 100%;
+  padding: 1rem 0;
+}
+@media screen and (min-width: 720px) {
+  body main #lista {
+    display: grid;
+    grid-template-columns: minmax(250px, auto) 1fr;
+  }
+}
+body main .btn {
+  min-width: 200px;
+  border-radius: 40px;
+  background-color: hsl(159, 69%, 38%);
+  color: white;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: none;
+  font-size: 1.2rem;
+  -moz-transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  box-shadow: 0px 6px 0px black;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+body main .btn.btn--delete {
+  background-color: hsl(16, 84%, 40%);
+}
+body main .btn.btn--delete:hover {
+  background-color: hsl(16, 81%, 25%);
+}
+body main .btn:hover {
+  background-color: hsl(159, 74%, 25%);
+}
+body main .btn:active {
+  -moz-transform: translateY(6px);
+  -webkit-transform: translateY(6px);
+  -ms-transform: translateY(6px);
+  -o-transform: translateY(6px);
+  transform: translateY(6px);
+  box-shadow: 0px 0px 0px black;
+}
+body main .ocultar {
+  opacity: 0;
+  z-index: -1;
+}
+
+@font-face {
+  src: url("../../assets/fonts/RedHatText/static/RedHatText-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  src: url("../../assets/fonts/RedHatText/static/RedHatText-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  src: url("../../assets/fonts/RedHatText/static/RedHatText-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../../assets/fonts/MaterialIcons/MaterialIcons-Regular.ttf") format("truetype");
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+/*=============================================
+=            Estilos de los iconos            =
+=============================================*/
+.icon--delete::before {
+  -moz-transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  display: inline-block;
+  font-family: "Material Icons";
+  content: "\e872";
+  color: red;
+  font-size: 1.8rem;
+}
+
+.icon--delete:hover::before {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.icon--delete-forever::before {
+  -moz-transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  display: inline-block;
+  font-family: "Material Icons";
+  content: "\e92b";
+  color: #040d2d;
+  font-size: 1.8rem;
+}
+
+.icon--delete-forever:hover::before {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.icon--edit::before {
+  -moz-transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  display: inline-block;
+  font-family: "Material Icons";
+  content: "\e3c9";
+  color: #040d2d;
+  font-size: 1.8rem;
+}
+
+.icon--edit:hover::before {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.icon--eye::before {
+  -moz-transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  display: inline-block;
+  font-family: "Material Icons";
+  content: "\e8f4";
+  color: #040d2d;
+  font-size: 1.8rem;
+}
+
+.icon--eye:hover::before {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.icon--start::before {
+  -moz-transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  display: inline-block;
+  font-family: "Material Icons";
+  content: "\e885";
+  color: #040d2d;
+  font-size: 1.8rem;
+}
+
+.icon--start:hover::before {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.icon--stop::before {
+  -moz-transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  display: inline-block;
+  font-family: "Material Icons";
+  content: "\e888";
+  color: #040d2d;
+  font-size: 1.8rem;
+}
+
+.icon--stop:hover::before {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.icon--bookmark::before {
+  -moz-transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  display: inline-block;
+  font-family: "Material Icons";
+  content: "\e866";
+  color: #040d2d;
+  font-size: 1.8rem;
+}
+
+.icon--bookmark:hover::before {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+/*=============================================
+=            Estilos de las cards            =
+=============================================*/
+.cards {
+  list-style: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-flow: row dense;
+  grid-auto-rows: 1fr;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+}
+.cards .card {
+  max-width: max-content;
+  min-height: max-content;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  align-items: center;
+}
+.cards .card h4 {
+  margin: 0;
+}
+.cards .card__img {
+  max-width: 280px;
+  height: 100%;
+}
+.cards .card:hover img, .cards .card:focus img {
+  border-color: #040d2d;
+}
+.cards .card__btn {
+  border-radius: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  color: white;
+  border: 1px solid;
+  font-size: 1.5rem;
+  background-color: #040d2d;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.cards .card__btn:hover {
+  color: #2eb4e7;
+  background-color: #040d2d;
+}
+.cards .card__categoria {
+  color: #040d2d;
+}
+.cards .card__precio {
+  color: #040d2d;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.cards .card__precio::after {
+  content: "€";
+}
+.cards .card__tallas {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+}
+.cards .card .nostock {
+  color: rgb(174, 171, 171);
+}
+.cards .card .icon--off::before {
+  color: gray;
+}
+
+/*=============================================
+=            Estilos del carrito            =
+=============================================*/
+.form {
+  max-width: 99%;
+  min-height: max-content;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #dce3eb;
+}
+@media screen and (min-width: 720px) {
+  .form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-auto-flow: row dense;
+    grid-auto-rows: 1fr;
+    gap: 1rem;
+  }
+}
+.form figure {
+  max-width: 250px;
+  margin: 0 auto;
+}
+.form form {
+  min-height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media screen and (min-width: 720px) {
+  .form form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, max-content));
+    grid-template-rows: auto;
+    justify-content: space-around;
+    align-content: center;
+    justify-items: start;
+    align-items: end;
+    gap: 1rem;
+  }
+}
+.form form label {
+  font-weight: 700;
+}
+.form form .campo {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.form form #codigo {
+  max-width: 6rem;
+}
+.form form #cantidad {
+  grid-column: span 2;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.form form #cantidad li {
+  text-align: center;
+  width: 4rem;
+}
+.form form #cantidad input {
+  width: 100%;
+  padding: 0.25rem 0;
+  text-align: center;
+}
+.form form input:not([type=number]),
+.form form select {
+  padding: 0.25rem 1rem;
+}
+.form form #precio {
+  max-width: 5rem;
+  padding: 0.25rem 0;
+  text-align: right;
+}
+.form form .botones {
+  grid-column: span 3;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+.form form #imagen {
+  align-content: flex-end;
+}
+
+#titulo {
+  min-width: 280px;
+}
+
+/*=============================================
+=            Estilos de los filtros            =
+=============================================*/
+.filtro {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.filtro__tallas {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 70px);
+  grid-auto-flow: row dense;
+  grid-auto-rows: 1fr;
+  justify-content: center;
+  gap: 4px;
+  grid-auto-rows: 50px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+.filtro__tallas li {
+  font-size: 1.3rem;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #040d2d;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.filtro__tallas li:hover {
+  border-width: 3px;
+}
+.filtro__tallas li:active {
+  background-color: #2eb4e7;
+  color: white;
+}
+.filtro h3:not(:first-of-type) {
+  margin-bottom: 1rem;
+}
+.filtro select {
+  padding: 0.25rem 1rem;
+}
+
+.filtro__tallas li.seleccionado {
+  background-color: #2eb4e7;
+  color: white;
+}
+
+.filtro__tallas li.off {
+  background-color: gray;
+  color: white;
+}
+/*=====  End of Estilos de los filtros  ======*/
+
+/*# sourceMappingURL=style.css.map */
